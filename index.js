@@ -65,14 +65,14 @@ class HashMap {
             return false;
         }
         this.table.splice(index, 1);
-
+        this.numItems--;
         return true;
     }
     length() {
         return this.numItems;
     }
     clear() {
-        this.table.forEach(() => {});
+        this.table = [];
     }
     keys() {
         const keysArray = [];
@@ -122,4 +122,8 @@ test.set("moon", "silver");
 console.log(test.table);
 console.log(test.get("moon"));
 console.log(test.values());
+console.log(test.keys());
+console.log(test.remove("hat"));
+console.log(test.keys());
+console.log(test.clear());
 console.log(test.keys());
